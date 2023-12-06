@@ -54,24 +54,24 @@ kbd.add_layer :default, %i[
                       LT_MED_ESC  LT_NAV_SPC  LT_MOU_TAB      LT_SYM_ENT  LT_NUM_BSPC LT_FUN_DEL  KC_MPLY
 ]
 
-kbd.define_mode_key :LGUI_T_A,    [ :KC_A,     :KC_LGUI,    200, nil ]
-kbd.define_mode_key :LT_BTN_Z,    [ :KC_Z,     :btn_layer,  200, nil ]
-kbd.define_mode_key :LALT_T_S,    [ :KC_S,     :KC_LALT,    200, nil ]
-kbd.define_mode_key :RALT_T_X,    [ :KC_X,     :KC_RALT,    200, nil ]
-kbd.define_mode_key :LCTL_T_D,    [ :KC_D,     :KC_LCTL,    200, nil ]
-kbd.define_mode_key :LT_FUN_DEL,  [ :KC_DEL,   :func_layer, 200, nil ]
-kbd.define_mode_key :LSFT_T_F,    [ :KC_F,     :KC_LSFT,    200, nil ]
-kbd.define_mode_key :LT_NUM_BSPC, [ :KC_BSPC,  :num_layer,  200, nil ]
-kbd.define_mode_key :LT_SYM_ENT,  [ :KC_ENT,   :sym_layer,  200, nil ]
-kbd.define_mode_key :LT_MOU_TAB,  [ :KC_TAB,   :mou_layer,  200, nil ]
-kbd.define_mode_key :LSFT_T_J,    [ :KC_J,     :KC_LSFT,    200, nil ]
-kbd.define_mode_key :LT_NAV_SPC,  [ :KC_SPC,   :nav_layer,  200, nil ]
-kbd.define_mode_key :LCTL_T_K,    [ :KC_K,     :KC_LCTL,    200, nil ]
-kbd.define_mode_key :LT_MED_ESC,  [ :KC_ESC,   :med_layer,  200, nil ]
-kbd.define_mode_key :LATL_T_L,    [ :KC_L,     :KC_LALT,    200, nil ]
-kbd.define_mode_key :RALT_T_DOT,  [ :KC_DOT,   :KC_RALT,    200, nil ]
-kbd.define_mode_key :LGUI_T_QUOT, [ :KC_QUOT,  :KC_LGUI,    200, nil ]
-kbd.define_mode_key :LT_BTN_SLSH, [ :KC_SLSH,  :btn_layer,  200, nil ]
+kbd.define_mode_key :LGUI_T_A,    [ :KC_A,     :KC_LGUI,    500, 200 ]
+kbd.define_mode_key :LT_BTN_Z,    [ :KC_Z,     :btn_layer,  500, 200 ]
+kbd.define_mode_key :LALT_T_S,    [ :KC_S,     :KC_LALT,    500, 200 ]
+kbd.define_mode_key :RALT_T_X,    [ :KC_X,     :KC_RALT,    500, 200 ]
+kbd.define_mode_key :LCTL_T_D,    [ :KC_D,     :KC_LCTL,    500, 200 ]
+kbd.define_mode_key :LT_FUN_DEL,  [ :KC_DEL,   :func_layer, 500, 200 ]
+kbd.define_mode_key :LSFT_T_F,    [ :KC_F,     :KC_LSFT,    500, 200 ]
+kbd.define_mode_key :LT_NUM_BSPC, [ :KC_BSPC,  :num_layer,  500, 200 ]
+kbd.define_mode_key :LT_SYM_ENT,  [ :KC_ENT,   :sym_layer,  500, 200 ]
+kbd.define_mode_key :LT_MOU_TAB,  [ :KC_TAB,   :mou_layer,  500, 200 ]
+kbd.define_mode_key :LSFT_T_J,    [ :KC_J,     :KC_LSFT,    500, 200 ]
+kbd.define_mode_key :LT_NAV_SPC,  [ :KC_SPC,   :nav_layer,  500, 200 ]
+kbd.define_mode_key :LCTL_T_K,    [ :KC_K,     :KC_LCTL,    500, 200 ]
+kbd.define_mode_key :LT_MED_ESC,  [ :KC_ESC,   :med_layer,  500, 200 ]
+kbd.define_mode_key :LATL_T_L,    [ :KC_L,     :KC_LALT,    500, 200 ]
+kbd.define_mode_key :RALT_T_DOT,  [ :KC_DOT,   :KC_RALT,    500, 200 ]
+kbd.define_mode_key :LGUI_T_QUOT, [ :KC_QUOT,  :KC_LGUI,    500, 200 ]
+kbd.define_mode_key :LT_BTN_SLSH, [ :KC_SLSH,  :btn_layer,  500, 200 ]
 
 kbd.add_layer :nav_layer, %i[
   BOOTSEL   KC_NO   KC_NO   KC_NO       KC_NO         KC_AGAIN    KC_PASTE    KC_COPY   KC_CUT    KC_UNDO
@@ -80,7 +80,7 @@ kbd.add_layer :nav_layer, %i[
                     KC_NO   LT_NAV_SPC  KC_NO         KC_NO       KC_NO       KC_NO     KC_MPLY
 ]
 
-kbd.define_mode_key :BOOTSEL, [ Proc.new { kbd.bootsel! }, nil, 500, nil ]
+kbd.define_mode_key :BOOTSEL, [ nil, Proc.new { kbd.bootsel! }, 700, nil ]
 
 kbd.add_layer :mou_layer, %i[
   BOOTSEL   KC_NO   KC_NO   KC_NO       KC_NO         KC_AGAIN    KC_PASTE    KC_COPY   KC_CUT    KC_UNDO
@@ -96,11 +96,11 @@ kbd.add_layer :btn_layer, %i[
                       KC_BTN3   KC_BTN1     KC_BTN2         KC_BTN2     KC_BTN1     KC_BTN3   KC_MPLY
 ]
 
-kbd.add_layer :nav_layer, %i[
-  BOOTSEL   KC_NO   KC_NO   KC_NO       KC_NO         RGB_MOD     RBG_HUI     KC_SAI    RGB_VAI   RGB_TOG
-  KC_LGUI   KC_LALT KC_LCTL KC_LSFT     KC_NO         KC_MPRV     KC_VOLD     KC_VOLU   KC_MNXT   KC_NO
-  KC_NA     KC_RALT KC_NO   KC_NO       KC_NO         KC_NO       KC_NO       KC_NO     KC_NO     KC_NO
-                    KC_NO   LT_NAV_SPC  KC_NO         KC_MSTP     KC_MPLY     KC_MUTE   KC_MPLY
+kbd.add_layer :med_layer, %i[
+  BOOTSEL   KC_NO     KC_NO       KC_NO       KC_NO         RGB_MOD     RBG_HUI     KC_SAI    RGB_VAI   RGB_TOG
+  KC_LGUI   KC_LALT   KC_LCTL     KC_LSFT     KC_NO         KC_MPRV     KC_VOLD     KC_VOLU   KC_MNXT   KC_NO
+  KC_NA     KC_RALT   KC_NO       KC_NO       KC_NO         KC_NO       KC_NO       KC_NO     KC_NO     KC_NO
+                      LT_MED_ESC  KC_NO       KC_NO         KC_MSTP     KC_MPLY     KC_MUTE   KC_MPLY
 ]
 
 kbd.add_layer :num_layer, %i[
